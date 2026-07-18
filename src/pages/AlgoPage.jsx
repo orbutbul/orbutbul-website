@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import PnLChart from '../components/PnLChart.jsx';
 
 const currency = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
 
@@ -47,6 +48,8 @@ export default function AlgoPage() {
             {data.generatedAt && (
               <p className="algo-updated">As of {formatDate(data.generatedAt)}</p>
             )}
+
+            {data.history && data.history.length > 1 && <PnLChart history={data.history} />}
 
             <h3 className="algo-trades-heading">Recent Trades</h3>
             {data.trades && data.trades.length > 0 ? (

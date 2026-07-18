@@ -217,7 +217,7 @@ body {
 }
 .algo-content {
   flex: none;
-  width: min(90%, 560px);
+  width: min(90%, 680px);
   text-align: center;
 }
 .algo-heading {
@@ -239,6 +239,11 @@ body {
   color: var(--main-accent);
   font-size: 0.9rem;
   margin-top: 0.5rem;
+}
+.algo-chart {
+  width: 100%;
+  height: 280px;
+  margin-top: 2rem;
 }
 .algo-trades-heading {
   margin-top: 3rem;

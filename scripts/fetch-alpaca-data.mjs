@@ -32,6 +32,7 @@ async function alpacaGet(pathname) {
 async function main() {
   const account = await alpacaGet('/v2/account');
   const orders = await alpacaGet('/v2/orders?status=all&limit=20&direction=desc');
+  const history = await alpacaGet('/v2/account/portfolio/history?period=1M&timeframe=1D');
 
   const trades = orders
     .filter((order) => order.status === 'filled')
@@ -44,9 +45,20 @@ async function main() {
       filledAt: order.filled_at,
     }));
 
+  // Alpaca pads in-progress days with a trailing null equity value; drop those.
+  // Daily bars use a plain YYYY-MM-DD string (lightweight-charts' recommended
+  // format for whole-day data, avoiding timezone off-by-one rendering issues).
+  const points = history.timestamp
+    .map((t, i) => ({
+      time: new Date(t * 1000).toISOString().slice(0, 10),
+      equity: history.equity[i],
+    }))
+    .filter((p) => p.equity != null);
+
   const data = {
     portfolioValue: account.portfolio_value,
     trades,
+    history: points,
     generatedAt: new Date().toISOString(),
   };
 
