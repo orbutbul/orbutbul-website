@@ -12,6 +12,7 @@ function HomePage() {
       <Hero />
       <div className="page-break" />
       <GemsSection />
+      <div className="page-break" />
       <ContactSection />
     </>
   );

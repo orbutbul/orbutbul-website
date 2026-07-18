@@ -247,48 +247,49 @@ body {
 }
 
 /* GEMS */
+#gems-page {
+  align-items: center;
+}
 #gemsDisplay {
-  flex-basis: 40%;
-  display: grid;
-  grid-template-rows: repeat(5, 1fr);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }
 #gemsCanvas {
-  place-self: center;
   width: min(80%, 480px);
   aspect-ratio: 1;
   border: 1px solid black;
   border-radius: 1rem;
   overflow: hidden;
-  grid-row: 1 / 5;
 }
 #gemsCanvas canvas {
   display: block;
 }
 .seedForm {
   z-index: 3;
-  grid-row: 5 / 6;
-  place-self: start;
-  width: 80%;
-  margin: auto;
+  width: min(80%, 480px);
+  margin: 0;
   display: flex;
   justify-content: space-evenly;
 }
 .seedForm > * {
   text-align: center;
   font-size: 1.4rem;
-  margin-top: 0.75rem;
   padding: 0.75rem;
   border-radius: 2rem;
   width: 40%;
   border: none;
 }
 .gems-description-panel {
+  height: auto;
   display: flex;
   flex-flow: column;
   align-items: center;
+  justify-content: center;
 }
 .gems-description {
-  place-self: start;
   width: min(80%, 480px);
   margin: 0 auto;
   text-align: center;
