@@ -108,6 +108,15 @@ button:hover,
   background-color: var(--main-bg-color);
   border: 1px solid var(--main-text);
 }
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+button:disabled:hover {
+  background-color: var(--main-text);
+  color: var(--main-bg-color);
+  border: none;
+}
 
 /* NAV BAR */
 .nav-bar {
@@ -309,6 +318,7 @@ body {
   font-weight: 500;
 }
 .contact-form input[type='text'],
+.contact-form input[type='email'],
 .contact-form textarea {
   width: 100%;
   padding: 10px 4px;
@@ -322,6 +332,7 @@ body {
   transition: border-color 0.3s;
 }
 .contact-form input[type='text']::placeholder,
+.contact-form input[type='email']::placeholder,
 .contact-form textarea::placeholder {
   color: var(--main-accent);
   text-align: left;
@@ -329,9 +340,21 @@ body {
 }
 .contact-form input[type='text']:hover,
 .contact-form input[type='text']:focus,
+.contact-form input[type='email']:hover,
+.contact-form input[type='email']:focus,
 .contact-form textarea:hover,
 .contact-form textarea:focus {
   border-bottom-color: var(--main-text);
+}
+.form-status {
+  font-size: 0.95rem;
+  margin-top: -0.5rem;
+}
+.form-status-ok {
+  color: #3a7a4e;
+}
+.form-status-error {
+  color: #a33b3b;
 }
 .contact-form textarea {
   resize: vertical;
