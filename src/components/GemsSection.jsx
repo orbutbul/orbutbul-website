@@ -36,19 +36,19 @@ export default function GemsSection() {
       </div>
       <div className="panel gems-description-panel">
         <p className="gems-description">
-          The GEMS (Generative expression of modeled shapes) project is a custom shader
-          generator that changes based on an alphanumeric seed value. Each seed value
-          (entered in the text input box labeled seed) generates a 3d object with unique
-          coloring based on the seed value.
+          GEMS (Generative Expression of Modeled Shapes) turns any alphanumeric seed into
+          a one-of-a-kind 3D object. Typing a seed decodes it into a number, which picks
+          one of twelve base shapes — the same seed always produces the same shape.
           <br />
           <br />
-          The seed value is converted into a number and its numerical properties (whether
-          it is prime, if it is even or odd, how many digits it has, etc) decide the
-          attributes of the shader (what the colors will be, what kind of noise textures
-          are applied, etc.)
+          From there, the seed's digits drive everything else: they choose the three
+          colors blended across the surface, and generate one to three procedural noise
+          patterns (Perlin, value noise, or Voronoi) that get layered together in a custom
+          GLSL shader to give the object its marbled, gem-like texture.
           <br />
           <br />
-          To generate objects, type a value in the text box labeled seed.
+          Nothing here is random — every visual detail traces back to the characters you
+          typed. Type a seed and hit Generate to see it take shape.
         </p>
       </div>
     </section>
