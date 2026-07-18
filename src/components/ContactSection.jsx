@@ -3,10 +3,16 @@ import Socials from './Socials.jsx';
 export default function ContactSection() {
   return (
     <>
-      <h2 className="letstalk">Let's talk!</h2>
       <section className="page contact" id="contact">
-        <div className="panel">
+        <div className="panel contact-intro">
+          <div>
+            <h2 className="letstalk">Get in touch</h2>
+            <p className="letstalk-sub">Let's chat!</p>
+          </div>
+        </div>
+        <div className="panel contact-panel">
           <form
+            id="contact-form"
             className="contact-form"
             action="https://formsubmit.co/contact@orbutbul.dev"
             method="POST"
@@ -17,13 +23,16 @@ export default function ContactSection() {
             <input type="text" name="name" placeholder="Name" id="contact-Name" required />
             <input type="text" name="email" placeholder="E-mail" id="contact-Email" required />
             <textarea name="message" placeholder="Message" id="contact-Message" required />
-            <button name="submit" type="submit">Send</button>
           </form>
         </div>
-        <div className="panel" style={{ height: '30vh' }}>
-          <Socials className="socials-square" />
-        </div>
       </section>
+      <div className="contact-actions-row">
+        <div className="contact-actions-spacer" />
+        <div className="contact-actions">
+          <button form="contact-form" name="submit" type="submit">Send</button>
+          <Socials className="socials-contact" />
+        </div>
+      </div>
     </>
   );
 }

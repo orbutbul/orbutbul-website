@@ -132,6 +132,8 @@ button:hover,
   transition: all 1s;
   flex-grow: 1;
   text-align: center;
+  text-decoration: none;
+  font-weight: 500;
 }
 .nav-link:hover {
   flex-grow: 2;
@@ -189,68 +191,47 @@ body {
   flex: 1 1 50%;
 }
 .panel {
-  height: 90vh;
+  height: 65vh;
 }
 .page-break {
-  height: 10vh;
+  height: 4vh;
 }
 
 /* INTRO */
 .intro {
-  border-radius: 2rem;
-  display: grid;
-  grid-template-rows: repeat(5, 1fr);
-  grid-template-columns: 1fr;
-}
-.intro > * {
-  flex: 1 0 50%;
-  grid-column: 1 / span 1;
-}
-.hello {
-  place-self: center;
-  overflow: hidden;
-  font-size: min(14vw, 80rem);
-  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .me {
-  width: min(80%, 300px);
-  margin: auto;
-  grid-row: 2 / span 3;
-  border-radius: 1rem;
-}
-.socials {
-  grid-row: 5;
-  place-self: center;
-  width: 60%;
-  justify-content: space-evenly;
-  display: flex;
+  width: min(90%, 460px);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 2rem;
 }
 .social-link {
   transition: all 0.3s;
-  flex-grow: 1;
 }
 .social-link:hover {
   transform: scale(150%);
 }
 .abtme {
-  font-size: 1.2rem;
-  display: grid;
-  grid-template-rows: repeat(4, 1fr);
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  text-align: center;
+  padding: 0 5%;
 }
-.myName {
-  grid-row: 2;
-  font-size: min(14vw, 80rem);
-  overflow: visible;
-}
-.myName-mobile {
-  display: none;
+.hero-heading {
+  font-size: min(4vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1.3;
 }
 .descript {
   text-align: center;
-  grid-row: 3;
   font-size: 1.2rem;
-  margin-top: 4%;
 }
 
 /* GEMS */
@@ -302,8 +283,26 @@ body {
 }
 
 /* CONTACT */
-.contact-form {
-  height: 100%;
+.contact-intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.letstalk {
+  margin: 0;
+  text-align: center;
+  font-size: 4rem;
+}
+.letstalk-sub {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--main-accent);
+  margin-top: 0.5rem;
+}
+.contact-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .contact-form label {
   display: block;
@@ -312,87 +311,118 @@ body {
 .contact-form input[type='text'],
 .contact-form textarea {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 10px 4px;
+  margin-bottom: 20px;
+  background: transparent;
+  color: var(--main-text);
+  border: none;
+  border-bottom: 3px solid var(--main-accent);
+  border-radius: 0;
+  text-align: left;
+  transition: border-color 0.3s;
+}
+.contact-form input[type='text']::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--main-accent);
+  text-align: left;
+  font-weight: 300;
+}
+.contact-form input[type='text']:hover,
+.contact-form input[type='text']:focus,
+.contact-form textarea:hover,
+.contact-form textarea:focus {
+  border-bottom-color: var(--main-text);
 }
 .contact-form textarea {
   resize: vertical;
 }
-.contact-form button[type='submit'] {
+
+.contact-actions-row {
+  display: flex;
+}
+.contact-actions-spacer {
+  flex: 1 1 50%;
+}
+.contact-actions {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.contact-actions button[type='submit'] {
   display: block;
   text-align: center;
   width: 40%;
-  margin: auto;
   padding-block: 10px;
 }
-.letstalk {
-  margin: auto;
-  text-align: center;
-  font-size: 4rem;
+.socials-contact {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
-.socials-square {
-  display: grid;
-  width: 90%;
-  height: 50%;
-  margin: auto;
-  grid-template-columns: repeat(4, 1fr);
-  place-items: center;
-}
-.socials-square .social-link {
-  transform: scale(3);
-  font-size: 1rem;
-}
-.socials-square .social-link:hover {
-  transform: scale(4) rotate(-15deg);
+.socials-contact .social-link {
+  width: 32px;
 }
 
 @media (max-width: 600px) {
+  /* Regular static nav bar on mobile: no diamond/hover animation */
   .nav-bar {
     width: 100%;
-    height: 8vh;
+    height: auto;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--main-accent);
   }
   .nav-bar-links {
     width: 100%;
     opacity: 1;
-    font-size: 6vw;
-    transform: translateY(50%);
+    transform: none;
+    transition: none;
+    font-size: 1.05rem;
   }
-  .nav-bar-icon > * {
+  .nav-bar-icon {
     display: none;
   }
+
   .page {
     flex-wrap: wrap;
     flex-flow: column;
     align-items: start;
-    height: 120vh;
+    height: auto;
   }
   .panel {
     width: 100%;
-    height: 100%;
+    height: auto;
   }
   .page-break {
     height: 5vh;
   }
-  .socials {
-    grid-row: 1;
+
+  /* HOME: simple centered flow instead of the desktop grid */
+  .page.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 1.25rem 1rem;
+    gap: 1.5rem;
   }
-  .hello {
-    grid-row: 5;
-    place-self: start center;
-  }
-  .myName {
-    display: none;
-  }
-  .myName-mobile {
-    display: inline;
-    grid-row: 5;
-    place-self: end center;
+  .me {
+    width: min(65%, 240px);
+    margin: 0 auto;
+    border-radius: 50%;
   }
   .abtme {
-    display: contents;
+    padding: 0;
+    gap: 1rem;
   }
+  .hero-heading {
+    font-size: 1.6rem;
+  }
+  .descript {
+    font-size: 1.05rem;
+  }
+
   #gems-page {
     flex-flow: column-reverse;
   }
@@ -401,26 +431,28 @@ body {
     line-height: 1.5rem;
     overflow: scroll;
   }
-  .contact {
-    flex-flow: column-reverse;
+  .contact-intro {
+    padding: 1rem 0;
   }
-  .contact-form {
-    margin-top: 10%;
-    height: 100%;
+  .letstalk {
+    font-size: 2.75rem;
   }
-  .socials-square {
-    display: grid;
-    width: 90%;
-    aspect-ratio: 1;
-    margin: auto;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    place-items: center;
+  .contact-actions-row {
+    flex-direction: column;
+  }
+  .contact-actions-spacer {
+    display: none;
+  }
+  .contact-actions {
+    margin-top: 1.5rem;
   }
 }
 
+.site-footer {
+  padding: 1rem 0 2rem;
+  text-align: center;
+}
 #copyright {
   text-align: center;
   color: var(--main-secondary);
-  padding-bottom: 2rem;
 }
