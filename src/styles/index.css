@@ -205,6 +205,9 @@ body {
 .page-break {
   height: 4vh;
 }
+.algo-trading {
+  min-height: 50vh;
+}
 
 /* INTRO */
 .intro {

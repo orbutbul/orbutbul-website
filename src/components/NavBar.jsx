@@ -2,9 +2,10 @@ export default function NavBar() {
   return (
     <nav className="nav-bar">
       <div className="nav-bar-links">
-        <a href="#home" className="nav-link">Home</a>
-        <a href="#gems-page" className="nav-link">Projects</a>
-        <a href="#contact" className="nav-link">Contact</a>
+        <a href="/#home" className="nav-link">Home</a>
+        <a href="/#gems-page" className="nav-link">Projects</a>
+        <a href="/#contact" className="nav-link">Contact</a>
+        <a href="/algo-trading" className="nav-link">Algo Trading</a>
       </div>
       <div className="nav-bar-icon">
         <svg id="DiamondLeft" width="13" height="6" viewBox="0 0 13 6" fill="none" xmlns="http://www.w3.org/2000/svg">
