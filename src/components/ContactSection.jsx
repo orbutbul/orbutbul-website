@@ -14,7 +14,7 @@ export default function ContactSection() {
           <form
             id="contact-form"
             className="contact-form"
-            action="https://formsubmit.co/contact@orbutbul.dev"
+            action="https://formsubmit.co/butbulor@gmail.com"
             method="POST"
             autoComplete="on"
           >
