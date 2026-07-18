@@ -254,7 +254,7 @@ body {
 }
 #gemsCanvas {
   place-self: center;
-  width: 80%;
+  width: min(80%, 480px);
   aspect-ratio: 1;
   border: 1px solid black;
   border-radius: 1rem;
@@ -285,9 +285,12 @@ body {
 .gems-description-panel {
   display: flex;
   flex-flow: column;
+  align-items: center;
 }
 .gems-description {
   place-self: start;
+  width: min(80%, 480px);
+  margin: 0 auto;
   text-align: center;
   font-size: 1.1rem;
   line-height: 1.65rem;

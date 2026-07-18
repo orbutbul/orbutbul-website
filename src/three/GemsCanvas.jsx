@@ -30,7 +30,7 @@ export function useGemsGenerator(containerRef) {
     container.appendChild(renderer.domElement);
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color('rgb(214,195,144)');
+    scene.background = new THREE.Color('#f5eee4'); // matches --main-bg-color
 
     const camera = new THREE.PerspectiveCamera(45, width / height, 0.01, 30);
     camera.position.set(0, 2, 5);
