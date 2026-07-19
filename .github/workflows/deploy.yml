@@ -26,7 +26,7 @@ jobs:
       - name: Fetch Alpaca data
         run: node scripts/fetch-alpaca-data.mjs
         env:
-          ALPACA_KEY_ID: ${{ secrets.ALPACA_KEY_ID }}
+          ALPACA_KEY_ID: ${{ secrets.ALPACA_API_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
 
       - name: Build
